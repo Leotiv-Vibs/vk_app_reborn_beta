@@ -7,6 +7,7 @@ import Avatar from "@vkontakte/vkui/dist/components/Avatar/Avatar";
 import {AdaptivityProvider, AppRoot} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 import {Icon16ErrorCircleFill} from '@vkontakte/icons';
+import FormItem from "@vkontakte/vkui/dist/components/FormItem/FormItem";
 
 import Home from './panels/Home';
 import Intro from './panels/Intro';
@@ -15,6 +16,7 @@ import Intro from './panels/Intro';
 const ROUTES = {
     HOME: 'home',
     INTRO: 'intro',
+
 };
 
 const STORAGE_KEYS = {
@@ -29,6 +31,8 @@ const App = () => {
 
     const [userHasSeeIntro, setUserHasSeeIntro] = useState(false);
     const [snackBar, setSnackBar] = useState(false);
+    const [role, setRole] = useState('');
+
 
 
     useEffect(() => {
@@ -47,6 +51,7 @@ const App = () => {
                 keys: Object.values(STORAGE_KEYS)
             });
             console.log(storageData)
+            console.log(role);
             const data = {};
             storageData.keys.forEach(({key, value}) => {
                 try {
@@ -107,15 +112,23 @@ const App = () => {
             </Snackbar>);
 
         }
+
+
     }
+
 
     return (
         <AdaptivityProvider>
             <AppRoot>
                 <View activePanel={activePanel} popout={popout}>
-                    <Home id={ROUTES.HOME} fetchedUser={fetchedUser} go={go} snackBarError={snackBar}/>
+
+                    <Home id={ROUTES.HOME} fetchedUser={fetchedUser} go={go} snackBarError={snackBar} role={role} o={setRole} />
                     <Intro id={ROUTES.INTRO} fetchedUser={fetchedUser} go={viewIntro()} snackBarError={snackBar}
                            userHasSeeIntro={userHasSeeIntro}/>
+
+
+
+
                 </View>
             </AppRoot>
         </AdaptivityProvider>
