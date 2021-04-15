@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/vk_app_reborn_beta/static/css/main.b3bdf110.chunk.css",
-    "main.js": "/vk_app_reborn_beta/static/js/main.8dd32abd.chunk.js",
-    "main.js.map": "/vk_app_reborn_beta/static/js/main.8dd32abd.chunk.js.map",
+    "main.js": "/vk_app_reborn_beta/static/js/main.3a438b74.chunk.js",
+    "main.js.map": "/vk_app_reborn_beta/static/js/main.3a438b74.chunk.js.map",
     "runtime-main.js": "/vk_app_reborn_beta/static/js/runtime-main.45b4f0cd.js",
     "runtime-main.js.map": "/vk_app_reborn_beta/static/js/runtime-main.45b4f0cd.js.map",
     "static/css/2.92d02543.chunk.css": "/vk_app_reborn_beta/static/css/2.92d02543.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.92d02543.chunk.css",
     "static/js/2.141c0632.chunk.js",
     "static/css/main.b3bdf110.chunk.css",
-    "static/js/main.8dd32abd.chunk.js"
+    "static/js/main.3a438b74.chunk.js"
   ]
 }
