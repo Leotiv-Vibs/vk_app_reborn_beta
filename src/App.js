@@ -61,7 +61,7 @@ const App = () => {
                         case STORAGE_KEYS.STATUS:
 
                             console.log(data[key].hasSeenIntro);
-                            // data[key].hasSeenIntro = false
+                            data[key].hasSeenIntro = false
                             if (data[key] && data[key].hasSeenIntro) {
                                 setActivePanel(ROUTES.HOME);
                                 setUserHasSeeIntro(true);
