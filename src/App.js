@@ -46,21 +46,29 @@ const App = () => {
 
         async function fetchData() {
             const user = await bridge.send('VKWebAppGetUserInfo');
-            console.log(user);
             const storageData = await bridge.send('VKWebAppStorageGet', {
                 keys: Object.values(STORAGE_KEYS)
             });
-            console.log(storageData)
-            console.log(role);
+
             const data = {};
+
             storageData.keys.forEach(({key, value}) => {
+
                 try {
                     data[key] = value ? JSON.parse(value) : {};
+                    console.log(data[key]);
                     switch (key) {
                         case STORAGE_KEYS.STATUS:
-                            if (data[key].hasSeenIntro) {
+
+                            console.log(data[key].hasSeenIntro);
+                            // data[key].hasSeenIntro = false
+                            if (data[key] && data[key].hasSeenIntro) {
                                 setActivePanel(ROUTES.HOME);
                                 setUserHasSeeIntro(true);
+                            }
+                            else{
+                                setActivePanel(ROUTES.INTRO);
+                                setUserHasSeeIntro(false);
                             }
                             break;
                         default:
@@ -96,7 +104,7 @@ const App = () => {
             await bridge.send('VKWebAppStorageSet', {
                 key: STORAGE_KEYS.STATUS,
                 value: JSON.stringify({
-                    userHasSeeIntro: true
+                    hasSeenIntro: true
                 })
             });
             go(ROUTES.HOME);
@@ -122,10 +130,10 @@ const App = () => {
             <AppRoot>
                 <View activePanel={activePanel} popout={popout}>
 
-                    <Home id={ROUTES.HOME} fetchedUser={fetchedUser} go={go} snackBarError={snackBar} role={role} o={setRole} />
-                    <Intro id={ROUTES.INTRO} fetchedUser={fetchedUser} go={viewIntro()} snackBarError={snackBar}
-                           userHasSeeIntro={userHasSeeIntro}/>
 
+                    <Intro id={ROUTES.INTRO} fetchedUser={fetchedUser} go={viewIntro} snackBarError={snackBar} userHasSeeIntro={userHasSeeIntro}/>
+
+                    <Home id={ROUTES.HOME} fetchedUser={fetchedUser} go={go} snackBarError={snackBar} role={role} o={setRole} />
 
 
 

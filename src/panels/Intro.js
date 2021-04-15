@@ -36,7 +36,7 @@ const Intro = ({id, snackBarError, fetchedUser, userHasSeeIntro, go}) => {
                                 header="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ"
                                 text="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ"
                                 caption="Photo by Meshi Marlboro"
-                                maxHeight={500}
+                                // maxHeight={500}
                             />
                             <ContentCard
                                 image="https://pbs.twimg.com/profile_images/570586763576365056/yQpjwZsy.jpeg"
@@ -44,7 +44,7 @@ const Intro = ({id, snackBarError, fetchedUser, userHasSeeIntro, go}) => {
                                 header="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ "
                                 text="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ"
                                 caption="Photo by Meshi Marlboro"
-                                maxHeight={500}
+                                // maxHeight={500}
                             />
                             <ContentCard
                                 image="https://pbs.twimg.com/profile_images/570586763576365056/yQpjwZsy.jpeg"
@@ -52,7 +52,7 @@ const Intro = ({id, snackBarError, fetchedUser, userHasSeeIntro, go}) => {
                                 header="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ"
                                 text="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ"
                                 caption="Photo by Meshi Marlboro"
-                                maxHeight={500}
+                                // maxHeight={500}
                             />
                         </CardGrid>
                 <FixedLayout vertical='bottom'>
