@@ -7,8 +7,6 @@ import FixedLayout from "@vkontakte/vkui/dist/components/FixedLayout/FixedLayout
 import CardGrid from "@vkontakte/vkui/dist/components/CardGrid/CardGrid";
 import ContentCard from "@vkontakte/vkui/dist/components/ContentCard/ContentCard";
 
-
-
 import './1.css';
 import {Button, Group} from "@vkontakte/vkui";
 import Div from "@vkontakte/vkui/dist/components/Div/Div";
