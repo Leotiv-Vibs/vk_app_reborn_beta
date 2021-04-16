@@ -8,15 +8,15 @@ import PanelHeaderBack from '@vkontakte/vkui/dist/components/PanelHeaderBack/Pan
 
 
 
-const Courses = ({id, go_home}) => (
+const Progress = ({id, go_stud}) => (
     <Panel id={id}>
 
-        <PanelHeader left={<PanelHeaderBack onClick={go_home}/>}>
-            Courses
+        <PanelHeader left={<PanelHeaderBack onClick={go_stud}/>}>
+            Progress
         </PanelHeader>
 
     </Panel>
 );
 
 
-export default Courses;
+export default Progress;
