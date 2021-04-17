@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 
 import {Panel, PanelHeader, PanelHeaderBack, Group, List, Cell, Div, Button} from '@vkontakte/vkui';
 import mascot from "../../img/bear.png";
+import '../css/logo.css'
 
 const Create_courses_in = ({id, go_pred, go_create}) => (
     <Panel id={id}>
@@ -14,7 +15,7 @@ const Create_courses_in = ({id, go_pred, go_create}) => (
         < Fragment>
             <Div className='User'>
 
-                <img className="Mascot" src={mascot} alt="Mascot"/>
+                <img className="Persik" src={mascot} alt="Mascot"/>
 
                 < h1> Создай свой уникальный курс</h1>
 

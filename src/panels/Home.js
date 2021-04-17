@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 
-
+import './css/logo.css'
 import './css/2.css';
 import mascot from '../img/bear.png';
 import {
@@ -43,7 +43,7 @@ const Home = ({
                     <Title level="1" size='m' weight="bold"><h1>Coursel</h1></Title>
 
 
-                        <img className="Mascot" src={mascot} alt="Mascot"/>
+                        <img className="Persik" src={mascot} alt="Mascot"/>
 
                     <Title level="3" weight="bold"><h2>Добро пожаловать!</h2></Title>
                     <h5>Воспользуйтесь самым лучшим приложением

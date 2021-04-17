@@ -15,7 +15,7 @@ import {
     Button
 } from '@vkontakte/vkui';
 
-import logo from './ICON.png'
+import logo from '../../img/bear.png'
 
 import basket from './basketball.jpg'
 
