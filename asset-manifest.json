@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/vk_app_reborn_beta/static/css/main.688ae3b9.chunk.css",
-    "main.js": "/vk_app_reborn_beta/static/js/main.2145e86f.chunk.js",
-    "main.js.map": "/vk_app_reborn_beta/static/js/main.2145e86f.chunk.js.map",
+    "main.js": "/vk_app_reborn_beta/static/js/main.7e08c5b7.chunk.js",
+    "main.js.map": "/vk_app_reborn_beta/static/js/main.7e08c5b7.chunk.js.map",
     "runtime-main.js": "/vk_app_reborn_beta/static/js/runtime-main.45b4f0cd.js",
     "runtime-main.js.map": "/vk_app_reborn_beta/static/js/runtime-main.45b4f0cd.js.map",
     "static/css/2.92d02543.chunk.css": "/vk_app_reborn_beta/static/css/2.92d02543.chunk.css",
-    "static/js/2.dea71093.chunk.js": "/vk_app_reborn_beta/static/js/2.dea71093.chunk.js",
-    "static/js/2.dea71093.chunk.js.map": "/vk_app_reborn_beta/static/js/2.dea71093.chunk.js.map",
+    "static/js/2.0edf4229.chunk.js": "/vk_app_reborn_beta/static/js/2.0edf4229.chunk.js",
+    "static/js/2.0edf4229.chunk.js.map": "/vk_app_reborn_beta/static/js/2.0edf4229.chunk.js.map",
     "index.html": "/vk_app_reborn_beta/index.html",
     "static/css/2.92d02543.chunk.css.map": "/vk_app_reborn_beta/static/css/2.92d02543.chunk.css.map",
     "static/css/main.688ae3b9.chunk.css.map": "/vk_app_reborn_beta/static/css/main.688ae3b9.chunk.css.map",
-    "static/js/2.dea71093.chunk.js.LICENSE.txt": "/vk_app_reborn_beta/static/js/2.dea71093.chunk.js.LICENSE.txt",
+    "static/js/2.0edf4229.chunk.js.LICENSE.txt": "/vk_app_reborn_beta/static/js/2.0edf4229.chunk.js.LICENSE.txt",
     "static/media/basketball.7012c886.jpg": "/vk_app_reborn_beta/static/media/basketball.7012c886.jpg",
     "static/media/bear.76d126bb.png": "/vk_app_reborn_beta/static/media/bear.76d126bb.png"
   },
   "entrypoints": [
     "static/js/runtime-main.45b4f0cd.js",
     "static/css/2.92d02543.chunk.css",
-    "static/js/2.dea71093.chunk.js",
+    "static/js/2.0edf4229.chunk.js",
     "static/css/main.688ae3b9.chunk.css",
-    "static/js/main.2145e86f.chunk.js"
+    "static/js/main.7e08c5b7.chunk.js"
   ]
 }
