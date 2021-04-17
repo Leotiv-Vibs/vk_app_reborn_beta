@@ -24,12 +24,13 @@ const Home = ({
 
             <Group>
                 <Div className='User' >
+                    <Title level="1" size='m' weight="bold"><h1>Coursel</h1></Title>
 
                 <img className="Mascot" src={mascot} alt="Mascot"/>
                     <Title level="3" weight="bold"><h2>Добро пожаловать!</h2></Title>
-                <h4>Воспользуйтесь самым лучшим приложением
+                <h5>Воспользуйтесь самым лучшим приложением
                     для отслеживания активностей ваших детей!
-                    Для продолжения сделайте выбор ниже.</h4>
+                    Для продолжения сделайте выбор ниже.</h5>
 </Div>
                 {/*<SliderSwitch*/}
 
