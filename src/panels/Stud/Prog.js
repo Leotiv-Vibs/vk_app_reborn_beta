@@ -8,13 +8,7 @@ const Progress_ = ({id, go_stud}) => (
         <PanelHeader left={<PanelHeaderBack onClick={go_stud}/>}>
             Progress
         </PanelHeader>
-
-        <Group>
-            <h4>Похуй пусть будет 0</h4>
-            <Div>
-                <Progress value={0}/>
-            </Div>
-        </Group>
+        
 
         <Group>
             <h4>Настольный теннис</h4>
