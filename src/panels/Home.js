@@ -14,7 +14,6 @@ const Home = ({
                   go_role,
                   fetchedUser,
                   go_prog,
-                  go_meshi,
                   go_cours,
                   role,
                   o,
@@ -109,7 +108,6 @@ const Home = ({
         {/*        <List>*/}
         {/*            <Cell onClick={go_cours}>Мои курсы</Cell>*/}
         {/*            <Cell onClick={go_prog}>Мой прогресс</Cell>*/}
-        {/*            <Cell onClick={go_meshi}>Предложение от месхи</Cell>*/}
         {/*        </List>*/}
         {/*    </Group>*/}
         {/*</Fragment>*/}

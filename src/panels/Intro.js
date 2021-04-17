@@ -33,7 +33,6 @@ const Intro = ({id, snackBarError, fetchedUser, userHasSeeIntro, go}) => {
                                 subtitle="ФОТОЧКА С ОПИСАНИЕМ ФУНКЦИОНАЛА"
                                 header="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ"
                                 text="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ"
-                                caption="Photo by Meshi Marlboro"
                                 // maxHeight={500}
                             />
                             <ContentCard
@@ -41,7 +40,6 @@ const Intro = ({id, snackBarError, fetchedUser, userHasSeeIntro, go}) => {
                                 subtitle="ФОТОЧКА С ОПИСАНИЕМ ФУНКЦИОНАЛА"
                                 header="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ "
                                 text="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ"
-                                caption="Photo by Meshi Marlboro"
                                 // maxHeight={500}
                             />
                             <ContentCard
@@ -49,7 +47,6 @@ const Intro = ({id, snackBarError, fetchedUser, userHasSeeIntro, go}) => {
                                 subtitle="ФОТОЧКА С ОПИСАНИЕМ ФУНКЦИОНАЛА"
                                 header="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ"
                                 text="ПОЗНАКОМИТЬ ПОЛЬЗОВАТЕЛЯ С ПРИЛОЖЕНИЕМ"
-                                caption="Photo by Meshi Marlboro"
                                 // maxHeight={500}
                             />
                         </CardGrid>

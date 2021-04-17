@@ -7,7 +7,6 @@ const Stud = ({
                   go,
                   go_home,
                   go_prog,
-                  go_meshi,
                   go_cours,
               }) => (
     <Panel id={id}>
@@ -22,7 +21,6 @@ const Stud = ({
                 <List>
                     <Cell onClick={go_cours}>Мои курсы</Cell>
                     <Cell onClick={go_prog}>Мой прогресс</Cell>
-                    <Cell onClick={go_meshi}>Предложение от месхи</Cell>
                 </List>
             </Group>
         </Fragment>
