@@ -27,8 +27,7 @@ const ROUTES = {
     STUD: 'stud',
     PRED: 'pred',
     ROD: 'rod',
-
-};2
+};
 
 const STORAGE_KEYS = {
     STATUS: 'status',
