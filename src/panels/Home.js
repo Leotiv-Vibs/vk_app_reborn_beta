@@ -1,22 +1,9 @@
 import React, {Fragment} from 'react';
 
-import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
-import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
-import Group from '@vkontakte/vkui/dist/components/Group/Group';
-import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
-import PanelHeaderBack from '@vkontakte/vkui/dist/components/PanelHeaderBack/PanelHeaderBack';
-import List from '@vkontakte/vkui/dist/components/List/List';
-import FormLayout from '@vkontakte/vkui/dist/components/FormLayout/FormLayout';
-import Radio from '@vkontakte/vkui/dist/components/Radio/Radio';
 
 import './css/2.css';
-
-import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
-import FormItem from '@vkontakte/vkui/dist/components/FormItem/FormItem';
-import SliderSwitch from '@vkontakte/vkui/dist/components/SliderSwitch/SliderSwitch';
-import {Button, Div} from "@vkontakte/vkui";
-import FixedLayout from "@vkontakte/vkui/dist/components/FixedLayout/FixedLayout";
-
+import mascot from '../img/bear.png'; 
+import {Button, Title, Div, SliderSwitch,Avatar,FormItem,FixedLayout,Radio,FormLayout,Cell,Group,PanelHeader,Panel } from "@vkontakte/vkui";
 
 const Home = ({
                   id,
@@ -27,7 +14,6 @@ const Home = ({
                   go_role,
                   fetchedUser,
                   go_prog,
-                  go_meshi,
                   go_cours,
                   role,
                   o,
@@ -35,25 +21,14 @@ const Home = ({
               }) => (
     <Panel id={id}>
 
-        {fetchedUser &&
-
-        <Fragment>
-            <PanelHeader>
-                Хата
-            </PanelHeader>
-            <Group>
-                <Cell
-                    before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-                    description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-                >
-                    {`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-                </Cell>
-            </Group>
-        </Fragment>}
-
         <Fragment>
 
             <Group>
+                <img className="Mascot" src={mascot} alt="Mascot"/>
+                <Title level="3" weight="bold">Добро пожаловать!</Title>
+                <Div>Воспользуйтесь самым лучшим приложением
+для отслеживания активностей ваших детей!
+Для продолжения сделайте выбор ниже.</Div>
                 {/*<SliderSwitch*/}
 
                 {/*    options=*/}
@@ -122,7 +97,6 @@ const Home = ({
         {/*        <List>*/}
         {/*            <Cell onClick={go_cours}>Мои курсы</Cell>*/}
         {/*            <Cell onClick={go_prog}>Мой прогресс</Cell>*/}
-        {/*            <Cell onClick={go_meshi}>Предложение от месхи</Cell>*/}
         {/*        </List>*/}
         {/*    </Group>*/}
         {/*</Fragment>*/}

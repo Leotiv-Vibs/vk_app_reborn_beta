@@ -10,8 +10,6 @@ import {Icon16ErrorCircleFill} from '@vkontakte/icons';
 import FormItem from "@vkontakte/vkui/dist/components/FormItem/FormItem";
 
 import Home from './panels/Home';
-import Intro from './panels/Intro';
-import Meshi from './panels/Meshi/meshi';
 import Courses_stud from './panels/Stud/Courses_stud';
 import Progress from './panels/Stud/Prog';
 import Rod from './panels/Rod/Rod';
@@ -21,13 +19,11 @@ import Stud from './panels/Stud/Stud';
 const ROUTES = {
     HOME: 'home',
     INTRO: 'intro',
-    MESHI: 'meshi',
     COURSES: 'courses',
     PROG: 'prog',
     STUD: 'stud',
     PRED: 'pred',
     ROD: 'rod',
-
 };
 
 const STORAGE_KEYS = {
@@ -36,7 +32,7 @@ const STORAGE_KEYS = {
 
 
 const App = () => {
-    const [activePanel, setActivePanel] = useState(ROUTES.INTRO);
+    const [activePanel, setActivePanel] = useState(ROUTES.HOME);
     const [fetchedUser, setUser] = useState(null);
     const [popout, setPopout] = useState(<ScreenSpinner size='large'/>);
 
@@ -77,7 +73,6 @@ const App = () => {
                                 setActivePanel(ROUTES.HOME);
                                 setUserHasSeeIntro(true);
                             } else {
-                                setActivePanel(ROUTES.INTRO);
                                 setUserHasSeeIntro(false);
                             }
                             break;
@@ -108,9 +103,7 @@ const App = () => {
     const go = panel => {
         setActivePanel(panel);
     };
-    const go_meshi = panel => {
-        setActivePanel(ROUTES.MESHI)
-    }
+    
     const go_home = panel => {
         setRole('');
         setActivePanel(ROUTES.HOME)
@@ -176,20 +169,16 @@ const App = () => {
                 <View activePanel={activePanel} popout={popout}>
 
 
-                    <Intro id={ROUTES.INTRO} fetchedUser={fetchedUser} go={viewIntro} snackBarError={snackBar}
-                           userHasSeeIntro={userHasSeeIntro}/>
 
                     <Home id={ROUTES.HOME} id_stud={ROUTES.STUD} id_pred={ROUTES.PRED} id_rod={ROUTES.ROD}
                           fetchedUser={fetchedUser} go={go} go_role={go_role} go_prog={go_prog} go_cours={go_cours}
-                          go_meshi={go_meshi}
                           snackBarError={snackBar} role={role} o={setRole} f_r={false_role}/>
 
 
-                    <Meshi id={ROUTES.MESHI} go_stud={go_stud}/>
                     <Courses_stud id={ROUTES.COURSES} go_stud={go_stud}/>
                     <Progress id={ROUTES.PROG} go_stud={go_stud}/>
 
-                    <Stud id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_cours} go_meshi={go_meshi}/>
+                    <Stud id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_cours}/>
                     <Pred id={ROUTES.PRED} go_home={go_home}/>
                     <Rod id={ROUTES.ROD} go_home={go_home}/>
 
