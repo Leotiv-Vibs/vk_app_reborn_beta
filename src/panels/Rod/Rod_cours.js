@@ -4,15 +4,15 @@ import React, {Fragment} from 'react';
 import {Panel, PanelHeader, PanelHeaderBack, Group, List, Cell, CardGrid, ContentCard} from '@vkontakte/vkui';
 import basket from "../Pred/basketball.jpg";
 
-const Courses_stud = ({id, go_stud}) => (
+const Rod_cours = ({id, go_rod}) => (
     <Panel id={id}>
 
-        <PanelHeader left={<PanelHeaderBack onClick={go_stud}/>}>
+        <PanelHeader left={<PanelHeaderBack onClick={go_rod}/>}>
             Courses
         </PanelHeader>
 
         <Fragment>
-            <h1>Твои курсы</h1>
+            <h1>Курсы Вашего ребёнка</h1>
             <Group>
                 <CardGrid size="l">
 
@@ -58,7 +58,6 @@ const Courses_stud = ({id, go_stud}) => (
                         subtitle="Категория курса"
                         header="Название курса"
                         text="Описание курса"
-                        caption="ДГТУ 2 этаж кабинет МЕСХИ(Адрес)"
                         maxHeight={250}
                     />
                     <ContentCard
@@ -77,4 +76,4 @@ const Courses_stud = ({id, go_stud}) => (
 );
 
 
-export default Courses_stud;
+export default Rod_cours;
