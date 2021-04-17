@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 
 import {Panel,PanelHeader,PanelHeaderBack,Group,List,Cell} from '@vkontakte/vkui';
 
-const Pred = ({id, go_home}) => (
+const Pred = ({id, go_home,go_create_cour_in}) => (
     <Panel id={id}>
 
         <PanelHeader left={<PanelHeaderBack onClick={go_home}/>}>
@@ -13,7 +13,7 @@ const Pred = ({id, go_home}) => (
             <Group>
                 <List>
                     <Cell >Мои курсы</Cell>
-                    <Cell >Создать курс</Cell>
+                    <Cell onClick={go_create_cour_in} >Создать курс</Cell>
                     <Cell >Искать курсы</Cell>
                 </List>
             </Group>

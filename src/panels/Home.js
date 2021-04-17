@@ -20,15 +20,17 @@ const Home = ({
                   f_r
               }) => (
     <Panel id={id}>
-
         <Fragment>
 
             <Group>
+                <Div className='User' >
+
                 <img className="Mascot" src={mascot} alt="Mascot"/>
-                <Title level="3" weight="bold">Добро пожаловать!</Title>
-                <Div>Воспользуйтесь самым лучшим приложением
-для отслеживания активностей ваших детей!
-Для продолжения сделайте выбор ниже.</Div>
+                    <Title level="3" weight="bold"><h2>Добро пожаловать!</h2></Title>
+                <h4>Воспользуйтесь самым лучшим приложением
+                    для отслеживания активностей ваших детей!
+                    Для продолжения сделайте выбор ниже.</h4>
+</Div>
                 {/*<SliderSwitch*/}
 
                 {/*    options=*/}

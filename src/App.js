@@ -15,6 +15,9 @@ import Progress from './panels/Stud/Prog';
 import Rod from './panels/Rod/Rod';
 import Pred from './panels/Pred/Pred';
 import Stud from './panels/Stud/Stud';
+import Create_courses_in from './panels/Pred/Create_courses_in';
+import Create_courses from "./panels/Pred/Create_courses";
+
 
 const ROUTES = {
     HOME: 'home',
@@ -24,6 +27,8 @@ const ROUTES = {
     STUD: 'stud',
     PRED: 'pred',
     ROD: 'rod',
+    CREATE_COUR_in: 'create_cour_in',
+    CREATE_COUR: 'create_cour'
 };
 
 const STORAGE_KEYS = {
@@ -103,7 +108,7 @@ const App = () => {
     const go = panel => {
         setActivePanel(panel);
     };
-    
+
     const go_home = panel => {
         setRole('');
         setActivePanel(ROUTES.HOME)
@@ -111,7 +116,6 @@ const App = () => {
     const go_prog = panel => {
         setActivePanel(ROUTES.PROG)
     }
-
 
     const go_cours = panel => {
         setActivePanel(ROUTES.COURSES)
@@ -124,6 +128,17 @@ const App = () => {
         setActivePanel(ROUTES.STUD);
     }
 
+    const go_pred = panel => {
+        setActivePanel(ROUTES.PRED);
+    }
+
+    const go_create_cour_in=panel=>{
+        setActivePanel(ROUTES.CREATE_COUR_in)
+    }
+
+    const go_create=panel=>{
+        setActivePanel(ROUTES.CREATE_COUR)
+    }
 
     const go_role = role_s => {
         console.log(role_s.role);
@@ -169,7 +184,6 @@ const App = () => {
                 <View activePanel={activePanel} popout={popout}>
 
 
-
                     <Home id={ROUTES.HOME} id_stud={ROUTES.STUD} id_pred={ROUTES.PRED} id_rod={ROUTES.ROD}
                           fetchedUser={fetchedUser} go={go} go_role={go_role} go_prog={go_prog} go_cours={go_cours}
                           snackBarError={snackBar} role={role} o={setRole} f_r={false_role}/>
@@ -179,8 +193,12 @@ const App = () => {
                     <Progress id={ROUTES.PROG} go_stud={go_stud}/>
 
                     <Stud id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_cours}/>
-                    <Pred id={ROUTES.PRED} go_home={go_home}/>
+                    <Pred id={ROUTES.PRED} go_home={go_home} go_create_cour_in={go_create_cour_in}/>
                     <Rod id={ROUTES.ROD} go_home={go_home}/>
+
+                    <Create_courses_in id={ROUTES.CREATE_COUR_in} go_pred={go_pred} go_create={go_create}/>
+                    <Create_courses id={ROUTES.CREATE_COUR} go_pred={go_pred} />
+
 
                 </View>
             </AppRoot>
