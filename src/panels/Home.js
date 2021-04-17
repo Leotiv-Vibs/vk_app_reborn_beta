@@ -2,8 +2,8 @@ import React, {Fragment} from 'react';
 
 
 import './css/2.css';
-
-import {Button, Div, SliderSwitch,Avatar,FormItem,FixedLayout,Radio,FormLayout,Cell,Group,PanelHeader,Panel } from "@vkontakte/vkui";
+import mascot from '../img/bear.png'; 
+import {Button, Title, Div, SliderSwitch,Avatar,FormItem,FixedLayout,Radio,FormLayout,Cell,Group,PanelHeader,Panel } from "@vkontakte/vkui";
 
 const Home = ({
                   id,
@@ -21,25 +21,14 @@ const Home = ({
               }) => (
     <Panel id={id}>
 
-        {fetchedUser &&
-
-        <Fragment>
-            <PanelHeader>
-                Хата
-            </PanelHeader>
-            <Group>
-                <Cell
-                    before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-                    description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-                >
-                    {`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-                </Cell>
-            </Group>
-        </Fragment>}
-
         <Fragment>
 
             <Group>
+                <img className="Mascot" src={mascot} alt="Mascot"/>
+                <Title level="3" weight="bold">Добро пожаловать!</Title>
+                <Div>Воспользуйтесь самым лучшим приложением
+для отслеживания активностей ваших детей!
+Для продолжения сделайте выбор ниже.</Div>
                 {/*<SliderSwitch*/}
 
                 {/*    options=*/}

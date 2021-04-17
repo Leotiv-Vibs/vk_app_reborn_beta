@@ -10,7 +10,6 @@ import {Icon16ErrorCircleFill} from '@vkontakte/icons';
 import FormItem from "@vkontakte/vkui/dist/components/FormItem/FormItem";
 
 import Home from './panels/Home';
-import Intro from './panels/Intro';
 import Courses_stud from './panels/Stud/Courses_stud';
 import Progress from './panels/Stud/Prog';
 import Rod from './panels/Rod/Rod';
@@ -33,7 +32,7 @@ const STORAGE_KEYS = {
 
 
 const App = () => {
-    const [activePanel, setActivePanel] = useState(ROUTES.INTRO);
+    const [activePanel, setActivePanel] = useState(ROUTES.HOME);
     const [fetchedUser, setUser] = useState(null);
     const [popout, setPopout] = useState(<ScreenSpinner size='large'/>);
 
@@ -74,7 +73,6 @@ const App = () => {
                                 setActivePanel(ROUTES.HOME);
                                 setUserHasSeeIntro(true);
                             } else {
-                                setActivePanel(ROUTES.INTRO);
                                 setUserHasSeeIntro(false);
                             }
                             break;
@@ -171,8 +169,6 @@ const App = () => {
                 <View activePanel={activePanel} popout={popout}>
 
 
-                    <Intro id={ROUTES.INTRO} fetchedUser={fetchedUser} go={viewIntro} snackBarError={snackBar}
-                           userHasSeeIntro={userHasSeeIntro}/>
 
                     <Home id={ROUTES.HOME} id_stud={ROUTES.STUD} id_pred={ROUTES.PRED} id_rod={ROUTES.ROD}
                           fetchedUser={fetchedUser} go={go} go_role={go_role} go_prog={go_prog} go_cours={go_cours}
