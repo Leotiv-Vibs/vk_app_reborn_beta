@@ -1,14 +1,6 @@
 import React, {Fragment} from 'react';
 
-
-import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
-import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
-
-import PanelHeaderBack from '@vkontakte/vkui/dist/components/PanelHeaderBack/PanelHeaderBack';
-import List from "@vkontakte/vkui/dist/components/List/List";
-import Cell from "@vkontakte/vkui/dist/components/Cell/Cell";
-import Group from "@vkontakte/vkui/dist/components/Group/Group";
-
+import {Panel,PanelHeader,PanelHeaderBack,Group,List,Cell} from '@vkontakte/vkui';
 
 const Stud = ({
                   id,

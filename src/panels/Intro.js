@@ -23,7 +23,7 @@ const Intro = ({id, snackBarError, fetchedUser, userHasSeeIntro, go}) => {
                         <Div className='User'>
                             {fetchedUser.photo_200 && <Avatar src={fetchedUser.photo_200}/>}
                             <h2>Привет, {fetchedUser.first_name}!</h2>
-                            <h4>Это сервис для трекинга оффлайн кружков!</h4>
+                            <h4>Это сервис для трекинга оффлайн кружков!12</h4>
                         </Div>
                     </Group>
                     <Div className='Button'>

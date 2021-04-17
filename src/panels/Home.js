@@ -1,22 +1,9 @@
 import React, {Fragment} from 'react';
 
-import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
-import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
-import Group from '@vkontakte/vkui/dist/components/Group/Group';
-import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
-import PanelHeaderBack from '@vkontakte/vkui/dist/components/PanelHeaderBack/PanelHeaderBack';
-import List from '@vkontakte/vkui/dist/components/List/List';
-import FormLayout from '@vkontakte/vkui/dist/components/FormLayout/FormLayout';
-import Radio from '@vkontakte/vkui/dist/components/Radio/Radio';
 
 import './css/2.css';
 
-import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
-import FormItem from '@vkontakte/vkui/dist/components/FormItem/FormItem';
-import SliderSwitch from '@vkontakte/vkui/dist/components/SliderSwitch/SliderSwitch';
-import {Button, Div} from "@vkontakte/vkui";
-import FixedLayout from "@vkontakte/vkui/dist/components/FixedLayout/FixedLayout";
-
+import {Button, Div, SliderSwitch,Avatar,FormItem,FixedLayout,Radio,FormLayout,Cell,Group,PanelHeader,Panel } from "@vkontakte/vkui";
 
 const Home = ({
                   id,

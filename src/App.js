@@ -28,7 +28,7 @@ const ROUTES = {
     PRED: 'pred',
     ROD: 'rod',
 
-};
+};2
 
 const STORAGE_KEYS = {
     STATUS: 'status',
@@ -36,7 +36,7 @@ const STORAGE_KEYS = {
 
 
 const App = () => {
-    const [activePanel, setActivePanel] = useState(ROUTES.INTRO);
+    const [activePanel, setActivePanel] = useState(ROUTES.HOME);
     const [fetchedUser, setUser] = useState(null);
     const [popout, setPopout] = useState(<ScreenSpinner size='large'/>);
 
