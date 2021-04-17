@@ -16,11 +16,11 @@ import Rod from './panels/Rod/Rod';
 import Pred from './panels/Pred/Pred';
 import Stud from './panels/Stud/Stud';
 import Create_courses_in from './panels/Pred/Create_courses_in';
-import Create_courses from "./panels/Pred/Create_courses";
+import CreateCourse from "./panels/Pred/Create_courses";
 import Cours_view from "./panels/Pred/Cours_view";
 import Rod_cours from "./panels/Rod/Rod_cours";
 
-
+const serverUrl = 'http://localhost:8000/';
 const ROUTES = {
     HOME: 'home',
     INTRO: 'intro',
@@ -34,7 +34,11 @@ const ROUTES = {
     COURS_VIEW: 'cours_view',
     ROD_COURS: 'rod_cours',
 };
-
+const ENDPOINT = {
+    'newCourse': 'add.course',
+    'userCourseList':'get.course_list',
+    'searchCourse': 'get.course_students'
+}
 const STORAGE_KEYS = {
     STATUS: 'status',
 };
@@ -175,7 +179,24 @@ const App = () => {
         console.log(search)
     }
 
-
+    const sendData = async function(url, data){
+        const request = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(data)
+        });
+        console.log(request.status);
+    }
+    const getData = async function(url){
+        const request = await fetch(url);
+        if(request.status == 200){
+            const result = await request.json();
+            return result;
+        }
+    }
     const viewIntro = async function () {
         try {
             await bridge.send('VKWebAppStorageSet', {
@@ -222,7 +243,7 @@ const App = () => {
                     <Rod id={ROUTES.ROD} go_home={go_home} my_func={my_func} go_rod_cours={go_rod_cours}/>
 
                     <Create_courses_in id={ROUTES.CREATE_COUR_in} go_pred={go_pred} go_create={go_create}/>
-                    <Create_courses id={ROUTES.CREATE_COUR} go_pred={go_pred}/>
+                    <CreateCourse id={ROUTES.CREATE_COUR} go_pred={go_pred} sendData={sendData} endpoint={serverUrl+ENDPOINT.newCourse}/>
 
                     <Cours_view id={ROUTES.COURS_VIEW} go_pred={go_pred}/>
 
