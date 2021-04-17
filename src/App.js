@@ -36,7 +36,7 @@ const STORAGE_KEYS = {
 
 
 const App = () => {
-    const [activePanel, setActivePanel] = useState(ROUTES.HOME);
+    const [activePanel, setActivePanel] = useState(ROUTES.INTRO);
     const [fetchedUser, setUser] = useState(null);
     const [popout, setPopout] = useState(<ScreenSpinner size='large'/>);
 
