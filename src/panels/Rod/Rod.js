@@ -15,6 +15,7 @@ const Rod = ({id, go_home}) => (
                     <Cell >Курсы ребенка</Cell>
                     <Cell >Прогресс ребенка</Cell>
                     <Cell >Искать курсы</Cell>
+                    <Cell >Указать ссылку на ребенка</Cell>
                 </List>
             </Group>
         </Fragment>

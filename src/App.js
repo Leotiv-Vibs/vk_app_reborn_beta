@@ -17,6 +17,7 @@ import Pred from './panels/Pred/Pred';
 import Stud from './panels/Stud/Stud';
 import Create_courses_in from './panels/Pred/Create_courses_in';
 import Create_courses from "./panels/Pred/Create_courses";
+import Cours_view from "./panels/Pred/Cours_view";
 
 
 const ROUTES = {
@@ -28,7 +29,8 @@ const ROUTES = {
     PRED: 'pred',
     ROD: 'rod',
     CREATE_COUR_in: 'create_cour_in',
-    CREATE_COUR: 'create_cour'
+    CREATE_COUR: 'create_cour',
+    COURS_VIEW: 'cours_view',
 };
 
 const STORAGE_KEYS = {
@@ -44,6 +46,8 @@ const App = () => {
     const [userHasSeeIntro, setUserHasSeeIntro] = useState(false);
     const [snackBar, setSnackBar] = useState(false);
     const [role, setRole] = useState('');
+
+    const [search, setSearch] = useState('')
 
 
     useEffect(() => {
@@ -132,11 +136,15 @@ const App = () => {
         setActivePanel(ROUTES.PRED);
     }
 
-    const go_create_cour_in=panel=>{
+    const go_create_cour_in = panel => {
         setActivePanel(ROUTES.CREATE_COUR_in)
     }
 
-    const go_create=panel=>{
+    const go_my_cours = panel => {
+        setActivePanel(ROUTES.COURS_VIEW)
+    }
+
+    const go_create = panel => {
         setActivePanel(ROUTES.CREATE_COUR)
     }
 
@@ -149,6 +157,12 @@ const App = () => {
         } else if (role_s.role == 'rodit') {
             go(ROUTES.ROD);
         }
+    }
+
+    const my_func = value => {
+        console.log(search)
+        setSearch(value)
+        console.log(search)
     }
 
 
@@ -192,12 +206,15 @@ const App = () => {
                     <Courses_stud id={ROUTES.COURSES} go_stud={go_stud}/>
                     <Progress id={ROUTES.PROG} go_stud={go_stud}/>
 
-                    <Stud id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_cours}/>
-                    <Pred id={ROUTES.PRED} go_home={go_home} go_create_cour_in={go_create_cour_in}/>
+                    <Stud id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_cours} my_func={my_func}/>
+                    <Pred id={ROUTES.PRED} go_home={go_home} go_create_cour_in={go_create_cour_in}
+                          go_my_cours={go_my_cours}/>
                     <Rod id={ROUTES.ROD} go_home={go_home}/>
 
                     <Create_courses_in id={ROUTES.CREATE_COUR_in} go_pred={go_pred} go_create={go_create}/>
-                    <Create_courses id={ROUTES.CREATE_COUR} go_pred={go_pred} />
+                    <Create_courses id={ROUTES.CREATE_COUR} go_pred={go_pred}/>
+
+                    <Cours_view id={ROUTES.COURS_VIEW} go_pred={go_pred}/>
 
 
                 </View>
