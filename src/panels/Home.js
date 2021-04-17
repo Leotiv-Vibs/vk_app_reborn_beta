@@ -1,9 +1,25 @@
 import React, {Fragment} from 'react';
 
-
+import './css/logo.css'
 import './css/2.css';
-import mascot from '../img/bear.png'; 
-import {Button, Title, Div, SliderSwitch,Avatar,FormItem,FixedLayout,Radio,FormLayout,Cell,Group,PanelHeader,Panel } from "@vkontakte/vkui";
+import mascot from '../img/bear.png';
+import {
+    Button,
+    Title,
+    Div,
+    TooltipContainer,
+    Tooltip,
+    SliderSwitch,
+    Avatar,
+    FormItem,
+    FixedLayout,
+    Radio,
+    FormLayout,
+    Cell,
+    Group,
+    PanelHeader,
+    Panel
+} from "@vkontakte/vkui";
 
 const Home = ({
                   id,
@@ -20,15 +36,20 @@ const Home = ({
                   f_r
               }) => (
     <Panel id={id}>
-
         <Fragment>
 
             <Group>
-                <img className="Mascot" src={mascot} alt="Mascot"/>
-                <Title level="3" weight="bold">Добро пожаловать!</Title>
-                <Div>Воспользуйтесь самым лучшим приложением
-для отслеживания активностей ваших детей!
-Для продолжения сделайте выбор ниже.</Div>
+                <Div className='User'>
+                    <Title level="1" size='m' weight="bold"><h1>Coursel</h1></Title>
+
+
+                        <img className="Persik" src={mascot} alt="Mascot"/>
+
+                    <Title level="3" weight="bold"><h2>Добро пожаловать!</h2></Title>
+                    <h5>Воспользуйтесь самым лучшим приложением
+                        для отслеживания активностей ваших детей!
+                        Для продолжения сделайте выбор ниже.</h5>
+                </Div>
                 {/*<SliderSwitch*/}
 
                 {/*    options=*/}
@@ -44,7 +65,6 @@ const Home = ({
                 {/*    }}*/}
                 {/*/>*/}
 
-                {role == ""}
                 <FormLayout>
                     <Div>
                         <FormItem top="Откуда списать">
@@ -66,9 +86,9 @@ const Home = ({
                 </FormLayout>
 
 
-                    <Button className="Button1" style={{fontsize: '70px'}} onClick={go_role({role})}>
+                <Button className="Button1" style={{fontsize: '70px'}} onClick={go_role({role})}>
 
-                    </Button>
+                </Button>
 
 
                 <h1>{role}</h1>

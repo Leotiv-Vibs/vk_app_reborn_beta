@@ -1,18 +1,34 @@
 import React, {Fragment} from 'react';
 
+import {
+    Panel,
+    PanelHeader,
+    PanelHeaderBack,
+    ContentCard,
+    Header,
+    CardGrid,
+    Card,
+    Group,
+    List,
+    Cell,
+    Div,
+    Button
+} from '@vkontakte/vkui';
 
-import {Panel, PanelHeader, PanelHeaderBack, Group, List, Cell, CardGrid, ContentCard} from '@vkontakte/vkui';
-import basket from "../Pred/basketball.jpg";
+import logo from '../../img/bear.png'
 
-const Courses_stud = ({id, go_stud}) => (
+import basket from './basketball.jpg'
+
+const Cours_view = ({id, go_pred,}) => (
     <Panel id={id}>
 
-        <PanelHeader left={<PanelHeaderBack onClick={go_stud}/>}>
-            Courses
+        <PanelHeader left={<PanelHeaderBack onClick={go_pred}/>}>
+            Pred
         </PanelHeader>
 
         <Fragment>
-            <h1>Твои курсы</h1>
+            <h4>Тутачки твои курсы</h4>
+
             <Group>
                 <CardGrid size="l">
 
@@ -71,10 +87,13 @@ const Courses_stud = ({id, go_stud}) => (
 
                 </CardGrid>
             </Group>
+
+
         </Fragment>
+
 
     </Panel>
 );
 
 
-export default Courses_stud;
+export default Cours_view;
