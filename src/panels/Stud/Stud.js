@@ -1,11 +1,11 @@
 import React, {Fragment, useState} from 'react';
 
-import {Panel, PanelHeader, Search, PanelHeaderBack, Group, Snackbar,List, Cell, Caption, Div,CardGrid, TabbarItem, Tabbar, Separator, Epic, ContentCard,CellButton} from '@vkontakte/vkui';
-import {Icon28AddOutline} from '@vkontakte/icons';
-import {Icon24Linked, Icon24ServicesOutline, Icon24StatisticsOutline} from "@vkontakte/icons";
-import sh from "../Rod/sh.jpg";
-import basket from "../Pred/basketball.jpg";
-import prog from "../Rod/prog.jpg";
+import {Panel, PanelHeader, Search, PanelHeaderBack, Group, Snackbar,Caption, Div,CardGrid, TabbarItem, Tabbar, Separator, Epic, ContentCard,CellButton} from '@vkontakte/vkui';
+import {Icon28AddOutline,Icon24ServicesOutline, Icon24StatisticsOutline} from '@vkontakte/icons';
+
+import sh from "../../img/sh.jpg";
+import basket from "../../img/basketball.jpg";
+import prog from "../../img/prog.jpg";
 
 
 const Stud = (props) => {
@@ -40,9 +40,7 @@ const Stud = (props) => {
                 Личный кабинет ученика
             </PanelHeader>            
             <Search placeholder="найти новый курс" onChange={searchHandler} after={null}/>
-            
             <Fragment>
-                
                 {searchResult?
                 <Fragment>
                     <Div>
@@ -50,13 +48,13 @@ const Stud = (props) => {
                     </Div>
                     <CardGrid size="l">
                     {searchResult.map((course)=>{
-                        return  <CellButton id={course.id} after={<Icon28AddOutline />} onClick={addToCourse}>
+                        return <CellButton id={course.id} after={<Icon28AddOutline />} onClick={addToCourse}>
                                     <ContentCard
                                             subtitle={course.address}
                                             header={course.name}
                                             text={course.description}
-                                            maxHeight={300}></ContentCard>
-                        </CellButton>
+                                            maxHeight={300}/>
+                                    </CellButton>
                         })
                     }
                     </CardGrid>

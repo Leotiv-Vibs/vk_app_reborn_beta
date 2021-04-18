@@ -1,9 +1,9 @@
 import React, {Fragment} from 'react';
 
 import {Panel, Div, Progress, PanelHeader, PanelHeaderBack, Group, List, Cell} from '@vkontakte/vkui';
-import sh from "../Rod/sh.jpg";
-import basket from "../Pred/basketball.jpg";
-import prog from "../Rod/prog.jpg";
+import sh from "../../img/sh.jpg";
+import basket from "../../img/basketball.jpg";
+import prog from "../../img/prog.jpg";
 
 import './stud.css'
 

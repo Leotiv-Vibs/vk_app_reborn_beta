@@ -1,5 +1,5 @@
 import React, {
-    Fragment, useState
+    Fragment
 } from 'react';
 
 import {
@@ -7,18 +7,13 @@ import {
     PanelHeader,
     PanelHeaderBack,
     ContentCard,
-    Header,
     CardGrid,
-    Card,
     Group,
-    List,
-    Cell,
     Div,
-    Button,
     Separator
 } from '@vkontakte/vkui';
 
-import basket from './Pred/basketball.jpg'
+import basket from '../img/basketball.jpg'
 
 
 
@@ -59,19 +54,11 @@ class CourseView extends React.Component{
                                         <Separator style={{margin: '22px 0'}}/>
                                 </Fragment>
                                     })
-                                    : <Div>Если ваши курсы еще не загрузились, скоро они появятся...</Div>
-                                    
+                                    : <Div>Если ваши курсы еще не загрузились, скоро они появятся...</Div>      
                             }
-        
-                            
-        
                         </CardGrid>
                     </Group>
-        
-        
                 </Div>
-        
-        
             </Panel>
         );
     };

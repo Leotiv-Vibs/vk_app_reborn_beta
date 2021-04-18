@@ -1,6 +1,4 @@
-import React, {Fragment} from 'react';
-
-
+import React from 'react';
 import {FormItem, Div, Textarea, Select, Input, PanelHeader, Panel, PanelHeaderBack, Button, FormLayout,Snackbar} from "@vkontakte/vkui";
 
 class CreateCourse extends React.Component{
@@ -65,7 +63,6 @@ class CreateCourse extends React.Component{
                 <Button stretched size='l' onClick={this.onSubmit}>Отправить данные</Button>
             </FormItem>
         </Div>
-        
         {this.state.successSendData &&
             <Snackbar
             onClose={()=>this.state.successSendData(false)}>

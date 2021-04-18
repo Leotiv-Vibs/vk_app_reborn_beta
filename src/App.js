@@ -1,13 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import bridge from '@vkontakte/vk-bridge';
-import View from '@vkontakte/vkui/dist/components/View/View';
-import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
-import Snackbar from "@vkontakte/vkui/dist/components/Snackbar/Snackbar";
-import Avatar from "@vkontakte/vkui/dist/components/Avatar/Avatar";
-import {AdaptivityProvider, AppRoot} from '@vkontakte/vkui';
+import {View,ScreenSpinner, AdaptivityProvider,AppRoot} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
-import {Icon16ErrorCircleFill} from '@vkontakte/icons';
-import FormItem from "@vkontakte/vkui/dist/components/FormItem/FormItem";
 
 import Home from './panels/Home';
 import Courses_stud from './panels/Stud/Courses_stud';
@@ -40,22 +34,13 @@ const ENDPOINT = {
     'searchCourse': serverUrl+'get.course_by_name',
     'addToCourse': serverUrl+'add.course_user'
 }
-const STORAGE_KEYS = {
-    STATUS: 'status',
-};
 
 
 const App = () => {
     const [activePanel, setActivePanel] = useState(ROUTES.HOME);
     const [fetchedUser, setUser] = useState(null);
     const [popout, setPopout] = useState(<ScreenSpinner size='large'/>);
-
-    const [userHasSeeIntro, setUserHasSeeIntro] = useState(false);
-    const [snackBar, setSnackBar] = useState(false);
     const [role, setRole] = useState('');
-
-    const [search, setSearch] = useState('')
-
     const [modal_card, setCard] = useState(false);
     const [ssilka, setSsilka] = useState('')
 
@@ -68,55 +53,7 @@ const App = () => {
                 document.body.attributes.setNamedItem(schemeAttribute);
             }
         });
-
-        async function fetchData() {
-            const user = await bridge.send('VKWebAppGetUserInfo');
-            console.log(user);
-            const storageData = await bridge.send('VKWebAppStorageGet', {
-                keys: Object.values(STORAGE_KEYS)
-            });
-
-            const data = {};
-
-            storageData.keys.forEach(({key, value}) => {
-
-                try {
-                    data[key] = value ? JSON.parse(value) : {};
-                    console.log(data[key]);
-                    switch (key) {
-                        case STORAGE_KEYS.STATUS:
-
-                            console.log(data[key].hasSeenIntro);
-                            data[key].hasSeenIntro = false
-                            if (data[key] && data[key].hasSeenIntro) {
-                                setActivePanel(ROUTES.HOME);
-                                setUserHasSeeIntro(true);
-                            } else {
-                                setUserHasSeeIntro(false);
-                            }
-                            break;
-                        default:
-                            break
-                    }
-                } catch (e) {
-                    setSnackBar(<Snackbar layout='vertical'
-                                          onClose={() => setSnackBar(null)}
-                                          before={<Avatar size={24} style={{backgroundColor: 'var(--dynamic-red)'}}>
-                                              <Icon16ErrorCircleFill fill='#fff' width='14' height='14'/>
-                                          </Avatar>}
-                                          duration={900}
-                    >
-                        Проблемка с принятием
-                    </Snackbar>);
-
-                }
-            })
-
-            setUser(user);
-            setPopout(null);
-        }
-
-        fetchData();
+        setPopout(null);
     }, []);
 
     
@@ -199,59 +136,24 @@ const App = () => {
             return result;
         }
     }
-    const viewIntro = async function () {
-        try {
-            await bridge.send('VKWebAppStorageSet', {
-                key: STORAGE_KEYS.STATUS,
-                value: JSON.stringify({
-                    hasSeenIntro: true
-                })
-            });
-            go(ROUTES.HOME);
-        } catch (error) {
-            setSnackBar(<Snackbar layout='vertical'
-                                  onClose={() => setSnackBar(null)}
-                                  before={<Avatar size={24} style={{backgroundColor: 'var(--dynamic-red)'}}>
-                                      <Icon16ErrorCircleFill fill='#fff' width='14' height='14'/>
-                                  </Avatar>}
-                                  duration={900}
-            >
-                Проблемка c отправкой
-            </Snackbar>);
-
-        }
-
-
-    }
-
 
     return (
         <AdaptivityProvider>
             <AppRoot>
                 <View activePanel={activePanel} popout={popout}>
-
-
                     <Home id={ROUTES.HOME} id_stud={ROUTES.STUD} id_pred={ROUTES.PRED} id_rod={ROUTES.ROD}
                           fetchedUser={fetchedUser} go={go} go_role={go_role} go_prog={go_prog} go_cours={go_my_cours}
-                          snackBarError={snackBar} role={role} o={setRole} f_r={false_role}/>
-
-
+                          role={role} o={setRole} f_r={false_role}/>
                     <Courses_stud id={ROUTES.COURSES} go_stud={go_stud}/>
                     <Progress_ id={ROUTES.PROG} go_stud={go_stud}/>
-
                     <Stud user={fetchedUser} sendData={sendData} endpointAdd={ENDPOINT.addToCourse} id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_my_cours} getData={getData} endpointSearch={ENDPOINT.searchCourse}/>
                     <Pred id={ROUTES.PRED} go_home={go_home} go_create_cour_in={go_create_cour_in}
                           go_my_cours={go_my_cours}/>
                     <Rod id={ROUTES.ROD} go_home={go_home} go_rod_cours={go_rod_cours} modal_card={modal_card} setCard={setCard} ssilka={ssilka} s={setSsilka}/>
-
                     <Create_courses_in id={ROUTES.CREATE_COUR_in} go_pred={go_pred} go_create={go_create}/>
                     <CreateCourse role={role} id={ROUTES.CREATE_COUR} go_pred={go_pred} user={fetchedUser} sendData={sendData} endpoint={ENDPOINT.newCourse}/>
-
                     <CourseView role={role} id={ROUTES.COURS_VIEW} endpoint={ENDPOINT.userCourseList} go_pred={go_pred} getData={getData} user={fetchedUser}/>
-
                     <Rod_cours id={ROUTES.ROD_COURS} go_rod={go_rod}/>
-
-
                 </View>
             </AppRoot>
         </AdaptivityProvider>
