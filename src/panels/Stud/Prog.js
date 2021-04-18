@@ -1,6 +1,11 @@
 import React, {Fragment} from 'react';
 
 import {Panel, Div, Progress, PanelHeader, PanelHeaderBack, Group, List, Cell} from '@vkontakte/vkui';
+import sh from "../Rod/sh.jpg";
+import basket from "../Pred/basketball.jpg";
+import prog from "../Rod/prog.jpg";
+
+import './stud.css'
 
 const Progress_ = ({id, go_stud}) => (
     <Panel id={id}>
@@ -8,35 +13,36 @@ const Progress_ = ({id, go_stud}) => (
         <PanelHeader left={<PanelHeaderBack onClick={go_stud}/>}>
             Progress
         </PanelHeader>
-        
 
-        <Group>
-            <h4>Настольный теннис</h4>
-            <Div>
-                <Progress value={20}/>
-            </Div>
-        </Group>
+        <Div className='User'>
+            <Group>
+                <h4>Шахматы</h4>
+                <Div>
+                    <img
+                        src={sh}/>
+                    <Progress value={55}/>
+                </Div>
+            </Group>
 
-        <Group>
-            <h4>Баскетбол</h4>
-            <Div>
-                <Progress value={40}/>
-            </Div>
-        </Group>
+            <Group>
+                <h4>Баскетбол</h4>
+                <Div>
+                    <img
+                        src={basket}/>
+                    <Progress value={70}/>
+                </Div>
+            </Group>
 
-        <Group>
-            <h4>Шахматы</h4>
-            <Div>
-                <Progress value={60}/>
-            </Div>
-        </Group>
+            <Group>
+                <h4>Программирование на Python</h4>
+                <Div>
+                    <img
+                        src={prog}/>
+                    <Progress value={100}/>
+                </Div>
+            </Group>
 
-        <Group>
-            <h4>Умение воровать</h4>
-            <Div>
-                <Progress value={100}/>
-            </Div>
-        </Group>
+        </Div>
 
     </Panel>
 );

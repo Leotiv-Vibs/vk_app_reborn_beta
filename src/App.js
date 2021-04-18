@@ -56,6 +56,9 @@ const App = () => {
 
     const [search, setSearch] = useState('')
 
+    const [modal_card, setCard] = useState(false);
+    const [ssilka, setSsilka] = useState('')
+
 
     useEffect(() => {
         bridge.subscribe(({detail: {type, data}}) => {
@@ -239,7 +242,7 @@ const App = () => {
                     <Stud user={fetchedUser} sendData={sendData} endpointAdd={ENDPOINT.addToCourse} id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_my_cours} getData={getData} endpointSearch={ENDPOINT.searchCourse}/>
                     <Pred id={ROUTES.PRED} go_home={go_home} go_create_cour_in={go_create_cour_in}
                           go_my_cours={go_my_cours}/>
-                    <Rod id={ROUTES.ROD} go_home={go_home} go_rod_cours={go_my_cours}/>
+                    <Rod id={ROUTES.ROD} go_home={go_home} go_rod_cours={go_rod_cours} modal_card={modal_card} setCard={setCard} ssilka={ssilka} s={setSsilka}/>
 
                     <Create_courses_in id={ROUTES.CREATE_COUR_in} go_pred={go_pred} go_create={go_create}/>
                     <CreateCourse role={role} id={ROUTES.CREATE_COUR} go_pred={go_pred} user={fetchedUser} sendData={sendData} endpoint={ENDPOINT.newCourse}/>
