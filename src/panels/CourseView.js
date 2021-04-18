@@ -17,7 +17,7 @@ import {
     Button
 } from '@vkontakte/vkui';
 
-import basket from './basketball.jpg'
+import basket from './Pred/basketball.jpg'
 
 
 class CourseView extends React.Component{

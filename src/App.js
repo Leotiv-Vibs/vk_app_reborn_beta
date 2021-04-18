@@ -17,7 +17,7 @@ import Pred from './panels/Pred/Pred';
 import Stud from './panels/Stud/Stud';
 import Create_courses_in from './panels/Pred/Create_courses_in';
 import CreateCourse from "./panels/Pred/Create_courses";
-import CourseView from "./panels/Pred/Cours_view";
+import CourseView from "./panels/CourseView";
 import Rod_cours from "./panels/Rod/Rod_cours";
 
 const serverUrl = 'http://localhost:8000/';
@@ -230,17 +230,17 @@ const App = () => {
 
 
                     <Home id={ROUTES.HOME} id_stud={ROUTES.STUD} id_pred={ROUTES.PRED} id_rod={ROUTES.ROD}
-                          fetchedUser={fetchedUser} go={go} go_role={go_role} go_prog={go_prog} go_cours={go_cours}
+                          fetchedUser={fetchedUser} go={go} go_role={go_role} go_prog={go_prog} go_cours={go_my_cours}
                           snackBarError={snackBar} role={role} o={setRole} f_r={false_role}/>
 
 
                     <Courses_stud id={ROUTES.COURSES} go_stud={go_stud}/>
                     <Progress_ id={ROUTES.PROG} go_stud={go_stud}/>
 
-                    <Stud id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_cours} my_func={my_func}/>
+                    <Stud id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_my_cours} my_func={my_func}/>
                     <Pred id={ROUTES.PRED} go_home={go_home} go_create_cour_in={go_create_cour_in}
                           go_my_cours={go_my_cours}/>
-                    <Rod id={ROUTES.ROD} go_home={go_home} my_func={my_func} go_rod_cours={go_rod_cours}/>
+                    <Rod id={ROUTES.ROD} go_home={go_home} my_func={my_func} go_rod_cours={go_my_cours}/>
 
                     <Create_courses_in id={ROUTES.CREATE_COUR_in} go_pred={go_pred} go_create={go_create}/>
                     <CreateCourse role={role} id={ROUTES.CREATE_COUR} go_pred={go_pred} user={fetchedUser} sendData={sendData} endpoint={ENDPOINT.newCourse}/>
