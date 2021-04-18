@@ -37,7 +37,8 @@ const ROUTES = {
 const ENDPOINT = {
     'newCourse': serverUrl+'add.course',
     'userCourseList':serverUrl+'get.course_list',
-    'searchCourse': serverUrl+'get.course_students'
+    'searchCourse': serverUrl+'get.course_by_name',
+    'addToCourse': serverUrl+'add.course_user'
 }
 const STORAGE_KEYS = {
     STATUS: 'status',
@@ -237,7 +238,7 @@ const App = () => {
                     <Courses_stud id={ROUTES.COURSES} go_stud={go_stud}/>
                     <Progress_ id={ROUTES.PROG} go_stud={go_stud}/>
 
-                    <Stud id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_my_cours} my_func={my_func}/>
+                    <Stud user={fetchedUser} sendData={sendData} endpointAdd={ENDPOINT.addToCourse} id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_my_cours} getData={getData} my_func={my_func} endpointSearch={ENDPOINT.searchCourse}/>
                     <Pred id={ROUTES.PRED} go_home={go_home} go_create_cour_in={go_create_cour_in}
                           go_my_cours={go_my_cours}/>
                     <Rod id={ROUTES.ROD} go_home={go_home} my_func={my_func} go_rod_cours={go_my_cours}/>
