@@ -1,48 +1,67 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
 
-import {
-    Panel,
-    PanelHeader,
-    Search,
-    PanelHeaderBack,
-    Group,
-    List,
-    Cell,
-    Epic,
-    Tabbar,
-    TabbarItem, Div, CardGrid, ContentCard, Separator
-} from '@vkontakte/vkui';
-import {Icon24Linked, Icon24ServicesOutline, Icon24StatisticsOutline} from "@vkontakte/icons";
-import sh from "../Rod/sh.jpg";
-import basket from "../Pred/basketball.jpg";
-import prog from "../Rod/prog.jpg";
+import {Panel, PanelHeader, Search, PanelHeaderBack, Group, Snackbar,Caption, Div,CardGrid, TabbarItem, Tabbar, Separator, Epic, ContentCard,CellButton} from '@vkontakte/vkui';
+import {Icon28AddOutline,Icon24ServicesOutline, Icon24StatisticsOutline} from '@vkontakte/icons';
 
-const Stud = ({
-                  id,
-                  go,
-                  go_home,
-                  go_prog,
-                  go_cours,
-                  my_func,
-              }) => (
-    <Panel id={id}>
-
-        <PanelHeader left={<PanelHeaderBack onClick={go_home}/>}>
-            Stud
-        </PanelHeader>
+import sh from "../../img/sh.jpg";
+import basket from "../../img/basketball.jpg";
+import prog from "../../img/prog.jpg";
 
 
-        {/*Сюда нужно как вместить поиск курса*/}
-        {/*Через функция my_func я присваиваю переменной  search значение которое вводится*/}
-        {/* И может как то можно использовать эту переменную в качестве параметра в LIKE  в запросе к бд*/}
-        {/*В консоли можно посмотреть за изменением переменной*/}
-        <Search onChange={e => my_func(e.target.value)} after={null}/>
-
-        <Fragment>
-            <Group>
-                <Div>
-                    Рекомендации
-                </Div>
+const Stud = (props) => {
+    const [searchResult, hasSearchResult] = useState(false);
+    const [addedToCourse, isAddToCourse] = useState(false);
+    
+    const addToCourse = async function(e){
+        console.log(e.currentTarget.id);
+        await props.sendData(props.endpointAdd, {
+            course_id: e.currentTarget.id,
+            user: props.user.id,
+            role: 'student'
+        });
+        isAddToCourse(true);
+        setTimeout(()=>isAddToCourse(false), 2000);
+    }
+    const search = async function(value){
+        const result = await props.getData(`${props.endpointSearch}?name=${value}`);
+        console.log(result);
+        if(result) hasSearchResult(result)
+    }
+    const searchHandler = async function(e){
+        console.log('blur');
+        if(e.target.value){
+            search(e.target.value);
+        }
+        else hasSearchResult(false);
+    }    
+    return(
+        <Panel id={props.id}>
+            <PanelHeader left={<PanelHeaderBack onClick={props.go_home}/>}>
+                Личный кабинет ученика
+            </PanelHeader>            
+            <Search placeholder="найти новый курс" onChange={searchHandler} after={null}/>
+            <Fragment>
+                {searchResult?
+                <Fragment>
+                    <Div>
+                        <Caption level="2">Для вас найдено {searchResult.length} результатов </Caption>
+                    </Div>
+                    <CardGrid size="l">
+                    {searchResult.map((course)=>{
+                        return <CellButton id={course.id} after={<Icon28AddOutline />} onClick={addToCourse}>
+                                    <ContentCard
+                                            subtitle={course.address}
+                                            header={course.name}
+                                            text={course.description}
+                                            maxHeight={300}/>
+                                    </CellButton>
+                        })
+                    }
+                    </CardGrid>
+                    
+                </Fragment>
+                :<Group>
+                <Div>Рекомендации</Div>
                 <Div>
                     <CardGrid size="l">
 
@@ -79,44 +98,39 @@ const Stud = ({
                             caption='ул. Халтуринский д. 23'
                         />
 
-
                     </CardGrid>
                 </Div>
-            </Group>
-            {/*<Group>*/}
-            {/*    <List>*/}
+                </Group>
+                }
 
-            {/*        <Cell onClick={go_cours}>Мои курсы</Cell>*/}
-            {/*        <Cell onClick={go_prog}>Мой прогресс</Cell>*/}
-            {/*    </List>*/}
-            {/*</Group>*/}
-
-
-            <Group>
 
                 <Epic tabbar={
                     <Tabbar>
                         <TabbarItem
 
-                            onClick={go_cours}
+                            onClick={props.go_cours}
                             text="Мои курсы"
                         ><Icon24ServicesOutline/></TabbarItem>
 
                         <TabbarItem
 
-                            onClick={go_prog}
+                            onClick={props.go_prog}
                             text="Мой прогресс"
                         ><Icon24StatisticsOutline/></TabbarItem>
 
 
                     </Tabbar>
                 }/>
-            </Group>
-        </Fragment>
+            </Fragment>
 
-
-    </Panel>
-);
-
+            {addedToCourse &&
+                <Snackbar
+                onClose={()=>isAddToCourse(false)}>
+                Вы добавлены в группу
+              </Snackbar>
+            }
+        </Panel>
+    );
+}
 
 export default Stud;

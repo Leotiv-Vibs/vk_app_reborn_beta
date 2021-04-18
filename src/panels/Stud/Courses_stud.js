@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 
 
 import  {Panel, Div, PanelHeader, PanelHeaderBack, Group, List, Cell, CardGrid, ContentCard} from '@vkontakte/vkui';
-import basket from "../Pred/basketball.jpg";
+import basket from "../../img/basketball.jpg";
 
 import './stud.css'
 

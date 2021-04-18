@@ -1,14 +1,13 @@
-.Button1{
+.Button1 {
     min-width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-
     background-color: white;
-
 }
-.User{
+
+.User {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,9 +15,6 @@
     flex-direction: column;
 }
 
-.vibor{
-
-
+.choose {
     background: rgba(0, 28, 61, 0.05);
-
 }
