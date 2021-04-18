@@ -14,7 +14,7 @@ import CreateCourse from "./panels/Pred/Create_courses";
 import CourseView from "./panels/CourseView";
 import Rod_cours from "./panels/Rod/Rod_cours";
 
-const serverUrl = 'http://localhost:8000/';
+const serverUrl = 'https://craftida.ru/';
 const ROUTES = {
     HOME: 'home',
     INTRO: 'intro',
@@ -53,7 +53,15 @@ const App = () => {
                 document.body.attributes.setNamedItem(schemeAttribute);
             }
         });
-        setPopout(null);
+
+        async function fetchData() {
+            const user = await bridge.send('VKWebAppGetUserInfo');
+            console.log(user);
+            setUser(user);
+            setPopout(null);
+        }
+
+        fetchData();
     }, []);
 
     
@@ -140,6 +148,7 @@ const App = () => {
     return (
         <AdaptivityProvider>
             <AppRoot>
+                {console.log(fetchedUser)}
                 <View activePanel={activePanel} popout={popout}>
                     <Home id={ROUTES.HOME} id_stud={ROUTES.STUD} id_pred={ROUTES.PRED} id_rod={ROUTES.ROD}
                           fetchedUser={fetchedUser} go={go} go_role={go_role} go_prog={go_prog} go_cours={go_my_cours}
