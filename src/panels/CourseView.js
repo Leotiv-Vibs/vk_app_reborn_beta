@@ -35,7 +35,7 @@ class CourseView extends React.Component{
         if(!this.state.fetchedData) this.init();
         return(
             <Panel id={this.props.id}>
-                <PanelHeader left={<PanelHeaderBack onClick={this.props.go_pred}/>}>
+                <PanelHeader left={<PanelHeaderBack onClick={()=>this.props.go_back(this.props.role)}/>}>
                     Мои курсы
                 </PanelHeader>
                 <Div>
