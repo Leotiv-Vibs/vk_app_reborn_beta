@@ -50,34 +50,20 @@ const Home = ({
                         для отслеживания активностей ваших детей!
                         Для продолжения сделайте выбор ниже.</h5>
                 </Div>
-                {/*<SliderSwitch*/}
-
-                {/*    options=*/}
-                {/*        {*/}
-                {/*            [*/}
-                {/*                {name: 'Ученик', value: 'stud'},*/}
-                {/*                {name: 'Преподаватель', value: 'teach'},*/}
-                {/*                {name: 'Родитель', value: 'rodit'},*/}
-                {/*            ]*/}
-                {/*        }*/}
-                {/*    onSwitch={activeValue => {*/}
-                {/*        o(activeValue)*/}
-                {/*    }}*/}
-                {/*/>*/}
 
                 <FormLayout>
                     <Div>
                         <FormItem top="Откуда списать">
 
-                            <Radio name="radio" value="rodit" defaultChecked onClick={event => o(event.target.value)}>
+                            <Radio name="radio" value="parent" defaultChecked onClick={event => o(event.target.value)}>
                                 Родитель
                             </Radio>
 
-                            <Radio name="radio" value="stud" onClick={event => o(event.target.value)}>
+                            <Radio name="radio" value="student" onClick={event => o(event.target.value)}>
                                 Ученик
                             </Radio>
 
-                            <Radio name="radio" value="teach" onClick={event => o(event.target.value)}>
+                            <Radio name="radio" value="leader" onClick={event => o(event.target.value)}>
                                 Преподаватель
                             </Radio>
 
@@ -95,52 +81,6 @@ const Home = ({
 
             </Group>
         </Fragment>
-
-        {/*{role == 'stud' &&*/}
-        {/*<Fragment>*/}
-        {/*    <PanelHeader*/}
-        {/*        left={<PanelHeaderBack onClick={f_r}/>}*/}
-        {/*    >*/}
-        {/*        Хата*/}
-        {/*    </PanelHeader>*/}
-        {/*    <Group>*/}
-        {/*        <Cell*/}
-        {/*            before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}*/}
-        {/*            description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}*/}
-        {/*        >*/}
-        {/*            {`${fetchedUser.first_name} ${fetchedUser.last_name}`}*/}
-        {/*        </Cell>*/}
-        {/*    </Group>*/}
-
-        {/*    <h1>Ты {role}</h1>*/}
-        {/*    <Group>*/}
-        {/*        <List>*/}
-        {/*            <Cell onClick={go_cours}>Мои курсы</Cell>*/}
-        {/*            <Cell onClick={go_prog}>Мой прогресс</Cell>*/}
-        {/*        </List>*/}
-        {/*    </Group>*/}
-        {/*</Fragment>*/}
-        {/*}*/}
-
-        {/*{role == 'teach' &&*/}
-        {/*<Fragment>*/}
-        {/*    <PanelHeader*/}
-        {/*        left={<PanelHeaderBack onClick={f_r}/>}>*/}
-        {/*        Хата*/}
-        {/*    </PanelHeader>*/}
-        {/*    <Group>*/}
-        {/*        <Cell*/}
-        {/*            before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}*/}
-        {/*            description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}*/}
-        {/*        >*/}
-        {/*            {`${fetchedUser.first_name} ${fetchedUser.last_name}`}*/}
-        {/*        </Cell>*/}
-        {/*    </Group>*/}
-        {/*    <h1>Ты {role}</h1>*/}
-        {/*    <h2>Ты можешь добавлять свои курсы и управлять ими прямо здесь ЕЕЕЕЕЕЕЕЕЕЕЕ о даааааааааааа</h2>*/}
-        {/*    <h6>сосать уроды сосать by Cen9</h6>*/}
-        {/*</Fragment>*/}
-        {/*}*/}
     </Panel>
 );
 

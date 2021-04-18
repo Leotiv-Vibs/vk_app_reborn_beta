@@ -17,7 +17,7 @@ import Pred from './panels/Pred/Pred';
 import Stud from './panels/Stud/Stud';
 import Create_courses_in from './panels/Pred/Create_courses_in';
 import CreateCourse from "./panels/Pred/Create_courses";
-import Cours_view from "./panels/Pred/Cours_view";
+import CourseView from "./panels/Pred/Cours_view";
 import Rod_cours from "./panels/Rod/Rod_cours";
 
 const serverUrl = 'http://localhost:8000/';
@@ -26,7 +26,7 @@ const ROUTES = {
     INTRO: 'intro',
     COURSES: 'courses',
     PROG: 'prog',
-    STUD: 'stud',
+    STUD: 'student',
     PRED: 'pred',
     ROD: 'rod',
     CREATE_COUR_in: 'create_cour_in',
@@ -35,9 +35,9 @@ const ROUTES = {
     ROD_COURS: 'rod_cours',
 };
 const ENDPOINT = {
-    'newCourse': 'add.course',
-    'userCourseList':'get.course_list',
-    'searchCourse': 'get.course_students'
+    'newCourse': serverUrl+'add.course',
+    'userCourseList':serverUrl+'get.course_list',
+    'searchCourse': serverUrl+'get.course_students'
 }
 const STORAGE_KEYS = {
     STATUS: 'status',
@@ -164,11 +164,11 @@ const App = () => {
 
     const go_role = role_s => {
         console.log(role_s.role);
-        if (role_s.role == 'stud') {
+        if (role_s.role == 'student') {
             go(ROUTES.STUD);
-        } else if (role_s.role == 'teach') {
+        } else if (role_s.role == 'leader') {
             go(ROUTES.PRED);
-        } else if (role_s.role == 'rodit') {
+        } else if (role_s.role == 'parent') {
             go(ROUTES.ROD);
         }
     }
@@ -243,9 +243,9 @@ const App = () => {
                     <Rod id={ROUTES.ROD} go_home={go_home} my_func={my_func} go_rod_cours={go_rod_cours}/>
 
                     <Create_courses_in id={ROUTES.CREATE_COUR_in} go_pred={go_pred} go_create={go_create}/>
-                    <CreateCourse id={ROUTES.CREATE_COUR} go_pred={go_pred} sendData={sendData} endpoint={serverUrl+ENDPOINT.newCourse}/>
+                    <CreateCourse role={role} id={ROUTES.CREATE_COUR} go_pred={go_pred} user={fetchedUser} sendData={sendData} endpoint={ENDPOINT.newCourse}/>
 
-                    <Cours_view id={ROUTES.COURS_VIEW} go_pred={go_pred}/>
+                    <CourseView role={role} id={ROUTES.COURS_VIEW} endpoint={ENDPOINT.userCourseList} go_pred={go_pred} getData={getData} user={fetchedUser}/>
 
                     <Rod_cours id={ROUTES.ROD_COURS} go_rod={go_rod}/>
 
