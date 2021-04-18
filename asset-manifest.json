@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "/vk_app_reborn_beta/static/css/main.688ae3b9.chunk.css",
-    "main.js": "/vk_app_reborn_beta/static/js/main.76b37581.chunk.js",
-    "main.js.map": "/vk_app_reborn_beta/static/js/main.76b37581.chunk.js.map",
+    "main.css": "/vk_app_reborn_beta/static/css/main.7fc6e0c3.chunk.css",
+    "main.js": "/vk_app_reborn_beta/static/js/main.bf6f4b48.chunk.js",
+    "main.js.map": "/vk_app_reborn_beta/static/js/main.bf6f4b48.chunk.js.map",
     "runtime-main.js": "/vk_app_reborn_beta/static/js/runtime-main.45b4f0cd.js",
     "runtime-main.js.map": "/vk_app_reborn_beta/static/js/runtime-main.45b4f0cd.js.map",
     "static/css/2.92d02543.chunk.css": "/vk_app_reborn_beta/static/css/2.92d02543.chunk.css",
-    "static/js/2.0edf4229.chunk.js": "/vk_app_reborn_beta/static/js/2.0edf4229.chunk.js",
-    "static/js/2.0edf4229.chunk.js.map": "/vk_app_reborn_beta/static/js/2.0edf4229.chunk.js.map",
+    "static/js/2.7f37c57a.chunk.js": "/vk_app_reborn_beta/static/js/2.7f37c57a.chunk.js",
+    "static/js/2.7f37c57a.chunk.js.map": "/vk_app_reborn_beta/static/js/2.7f37c57a.chunk.js.map",
     "index.html": "/vk_app_reborn_beta/index.html",
     "static/css/2.92d02543.chunk.css.map": "/vk_app_reborn_beta/static/css/2.92d02543.chunk.css.map",
-    "static/css/main.688ae3b9.chunk.css.map": "/vk_app_reborn_beta/static/css/main.688ae3b9.chunk.css.map",
-    "static/js/2.0edf4229.chunk.js.LICENSE.txt": "/vk_app_reborn_beta/static/js/2.0edf4229.chunk.js.LICENSE.txt",
+    "static/css/main.7fc6e0c3.chunk.css.map": "/vk_app_reborn_beta/static/css/main.7fc6e0c3.chunk.css.map",
+    "static/js/2.7f37c57a.chunk.js.LICENSE.txt": "/vk_app_reborn_beta/static/js/2.7f37c57a.chunk.js.LICENSE.txt",
     "static/media/basketball.7012c886.jpg": "/vk_app_reborn_beta/static/media/basketball.7012c886.jpg",
-    "static/media/bear.76d126bb.png": "/vk_app_reborn_beta/static/media/bear.76d126bb.png"
+    "static/media/bear.76d126bb.png": "/vk_app_reborn_beta/static/media/bear.76d126bb.png",
+    "static/media/prog.4904000c.jpg": "/vk_app_reborn_beta/static/media/prog.4904000c.jpg",
+    "static/media/sh.4945ec68.jpg": "/vk_app_reborn_beta/static/media/sh.4945ec68.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.45b4f0cd.js",
     "static/css/2.92d02543.chunk.css",
-    "static/js/2.0edf4229.chunk.js",
-    "static/css/main.688ae3b9.chunk.css",
-    "static/js/main.76b37581.chunk.js"
+    "static/js/2.7f37c57a.chunk.js",
+    "static/css/main.7fc6e0c3.chunk.css",
+    "static/js/main.bf6f4b48.chunk.js"
   ]
 }
