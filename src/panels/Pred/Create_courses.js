@@ -12,7 +12,7 @@ class CreateCourse extends React.Component{
             category:'',
             address:'',
             description:'',
-            user: 456
+            user: props.user.id
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
