@@ -1,7 +1,13 @@
 import React, {Fragment, useState} from 'react';
 
-import {Panel, PanelHeader, Search, PanelHeaderBack, Group, Snackbar,List, Cell, Caption, Div,CardGrid, ContentCard,CellButton} from '@vkontakte/vkui';
+import {Panel, PanelHeader, Search, PanelHeaderBack, Group, Snackbar,List, Cell, Caption, Div,CardGrid, TabbarItem, Tabbar, Separator, Epic, ContentCard,CellButton} from '@vkontakte/vkui';
 import {Icon28AddOutline} from '@vkontakte/icons';
+import {Icon24Linked, Icon24ServicesOutline, Icon24StatisticsOutline} from "@vkontakte/icons";
+import sh from "../Rod/sh.jpg";
+import basket from "../Pred/basketball.jpg";
+import prog from "../Rod/prog.jpg";
+
+
 const Stud = (props) => {
     const [searchResult, hasSearchResult] = useState(false);
     const [addedToCourse, isAddToCourse] = useState(false);
@@ -56,7 +62,7 @@ const Stud = (props) => {
                     </CardGrid>
                     
                 </Fragment>
-                :            <Group>
+                :<Group>
                 <Div>Рекомендации</Div>
                 <Div>
                     <CardGrid size="l">

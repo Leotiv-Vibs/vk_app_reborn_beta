@@ -14,10 +14,12 @@ import {
     List,
     Cell,
     Div,
-    Button
+    Button,
+    Separator
 } from '@vkontakte/vkui';
 
 import basket from './Pred/basketball.jpg'
+
 
 
 class CourseView extends React.Component{
@@ -46,12 +48,16 @@ class CourseView extends React.Component{
                         <CardGrid size="l">
                             {this.courseData?
                                 this.courseData.map((course)=>{
-                                return <ContentCard
-                                        image={basket}
-                                        subtitle={course.category}
-                                        header={course.name}
-                                        text={course.description}
-                                        maxHeight={300}/>
+                                return <Fragment>
+                                        <ContentCard
+                                            image={basket}
+                                            subtitle={course.category}
+                                            header={course.name}
+                                            text={course.description}
+                                            caption={course.address}
+                                            maxHeight={250}/>
+                                        <Separator style={{margin: '22px 0'}}/>
+                                </Fragment>
                                     })
                                     : <Div>Если ваши курсы еще не загрузились, скоро они появятся...</Div>
                                     

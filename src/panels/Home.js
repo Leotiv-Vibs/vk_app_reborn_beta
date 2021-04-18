@@ -59,7 +59,7 @@ const Home = ({
                         <FormItem top="Выберите роль">
 
                             <Div className='vibor' >
-                            <Radio name="radio" value="rodit" defaultChecked onClick={event => o(event.target.value)}>
+                            <Radio name="radio" value="parent" defaultChecked onClick={event => o(event.target.value)}>
                                 Родитель
                             </Radio>
                                 <Separator style={{ margin: '12px 0' }} />
@@ -83,9 +83,6 @@ const Home = ({
                 <Button className="Button1" style={{fontsize: '70px'}} onClick={go_role({role})}>
 
                 </Button>
-
-
-                <h1>{role}</h1>
 
             </Group>
         </Fragment>
