@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 
 
-import {FormItem, Div, Textarea, Select, Input, PanelHeader, Panel, PanelHeaderBack, Button, FormLayout} from "@vkontakte/vkui";
+import {FormItem, Div, Textarea, Select, Input, PanelHeader, Panel, PanelHeaderBack, Button, FormLayout,Snackbar} from "@vkontakte/vkui";
 
 class CreateCourse extends React.Component{
     constructor(props){
@@ -26,6 +26,7 @@ class CreateCourse extends React.Component{
         e.preventDefault();
         const data = this.state;
         this.props.sendData(this.props.endpoint, data);
+        this.setState({successSendData: true});
     }
     render(){
         return <Panel id={this.props.id}>
@@ -64,10 +65,16 @@ class CreateCourse extends React.Component{
                 <Button stretched size='l' onClick={this.onSubmit}>Отправить данные</Button>
             </FormItem>
         </Div>
-
-
+        
+        {this.state.successSendData &&
+            <Snackbar
+            onClose={()=>this.state.successSendData(false)}>
+                Вы успешно добавили курс! <br/> Вернитесь назад, чтобы убедиться в этом:)
+            </Snackbar>        
+        }
     </Panel>
     }
+    
 }
 
 

@@ -116,10 +116,10 @@ const App = () => {
         fetchData();
     }, []);
 
+    
     const go = panel => {
         setActivePanel(panel);
     };
-
     const go_home = panel => {
         setRole('');
         setActivePanel(ROUTES.HOME)
@@ -174,11 +174,9 @@ const App = () => {
         }
     }
 
-    const my_func = value => {
-        console.log(search)
-        setSearch(value)
-        console.log(search)
-    }
+   const prev_view = function(currentRoute){
+        return id; 
+   }
 
     const sendData = async function(url, data){
         const request = await fetch(url, {
@@ -238,10 +236,10 @@ const App = () => {
                     <Courses_stud id={ROUTES.COURSES} go_stud={go_stud}/>
                     <Progress_ id={ROUTES.PROG} go_stud={go_stud}/>
 
-                    <Stud user={fetchedUser} sendData={sendData} endpointAdd={ENDPOINT.addToCourse} id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_my_cours} getData={getData} my_func={my_func} endpointSearch={ENDPOINT.searchCourse}/>
+                    <Stud user={fetchedUser} sendData={sendData} endpointAdd={ENDPOINT.addToCourse} id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_my_cours} getData={getData} endpointSearch={ENDPOINT.searchCourse}/>
                     <Pred id={ROUTES.PRED} go_home={go_home} go_create_cour_in={go_create_cour_in}
                           go_my_cours={go_my_cours}/>
-                    <Rod id={ROUTES.ROD} go_home={go_home} my_func={my_func} go_rod_cours={go_my_cours}/>
+                    <Rod id={ROUTES.ROD} go_home={go_home} go_rod_cours={go_my_cours}/>
 
                     <Create_courses_in id={ROUTES.CREATE_COUR_in} go_pred={go_pred} go_create={go_create}/>
                     <CreateCourse role={role} id={ROUTES.CREATE_COUR} go_pred={go_pred} user={fetchedUser} sendData={sendData} endpoint={ENDPOINT.newCourse}/>

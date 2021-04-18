@@ -2,13 +2,13 @@ import React, {Fragment} from 'react';
 
 import {Panel, PanelHeader, PanelHeaderBack, Group, List, Cell, Search} from '@vkontakte/vkui';
 
-const Rod = ({id, go_home, my_func,go_rod_cours}) => (
+const Rod = ({id, go_home, go_rod_cours}) => (
     <Panel id={id}>
 
         <PanelHeader left={<PanelHeaderBack onClick={go_home}/>}>
             Личный кабинет родителя
         </PanelHeader>
-        <Search onChange={e => my_func(e.target.value)} after={null}/>
+        <Search  after={null}/>
         <Fragment>
             <Group>
                 <List>
