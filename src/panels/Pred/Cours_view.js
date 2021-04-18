@@ -16,6 +16,7 @@ import {
 } from '@vkontakte/vkui';
 
 import logo from '../../img/bear.png'
+import '../css/2.css'
 
 import basket from './basketball.jpg'
 
@@ -27,7 +28,9 @@ const Cours_view = ({id, go_pred,}) => (
         </PanelHeader>
 
         <Fragment>
-            <h4>Тутачки твои курсы</h4>
+            <Div className='User' >
+            <h4>Твои курсы</h4>
+
 
             <Group>
                 <CardGrid size="l">
@@ -74,7 +77,6 @@ const Cours_view = ({id, go_pred,}) => (
                         subtitle="Категория курса"
                         header="Название курса"
                         text="Описание курса"
-                        caption="ДГТУ 2 этаж кабинет МЕСХИ(Адрес)"
                         maxHeight={250}
                     />
                     <ContentCard
@@ -87,7 +89,7 @@ const Cours_view = ({id, go_pred,}) => (
 
                 </CardGrid>
             </Group>
-
+            </Div>
 
         </Fragment>
 

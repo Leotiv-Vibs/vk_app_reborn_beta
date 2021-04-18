@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 
 import './css/logo.css'
 import './css/2.css';
+import './home.css'
 import mascot from '../img/bear.png';
 import {
     Button,
@@ -17,7 +18,9 @@ import {
     FormLayout,
     Cell,
     Group,
+    Separator,
     PanelHeader,
+    Text,
     Panel
 } from "@vkontakte/vkui";
 
@@ -46,9 +49,9 @@ const Home = ({
                         <img className="Persik" src={mascot} alt="Mascot"/>
 
                     <Title level="3" weight="bold"><h2>Добро пожаловать!</h2></Title>
-                    <h5>Воспользуйтесь самым лучшим приложением
+                    <Text weight="medium"  >Воспользуйтесь самым лучшим приложением
                         для отслеживания активностей ваших детей!
-                        Для продолжения сделайте выбор ниже.</h5>
+                        Для продолжения сделайте выбор ниже.</Text>
                 </Div>
                 {/*<SliderSwitch*/}
 
@@ -67,19 +70,24 @@ const Home = ({
 
                 <FormLayout>
                     <Div>
-                        <FormItem top="Откуда списать">
+                        <FormItem top="Выберите роль">
 
+                            <Div className='vibor' >
                             <Radio name="radio" value="rodit" defaultChecked onClick={event => o(event.target.value)}>
                                 Родитель
                             </Radio>
+                                <Separator style={{ margin: '12px 0' }} />
+
 
                             <Radio name="radio" value="stud" onClick={event => o(event.target.value)}>
                                 Ученик
                             </Radio>
+                                <Separator style={{ margin: '12px 0' }} />
 
                             <Radio name="radio" value="teach" onClick={event => o(event.target.value)}>
                                 Преподаватель
                             </Radio>
+                            </Div>
 
                         </FormItem>
                     </Div>

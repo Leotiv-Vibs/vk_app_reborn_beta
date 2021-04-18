@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 
-import {Panel, PanelHeader, PanelHeaderBack, Group, List, Cell, Div, Button} from '@vkontakte/vkui';
+import {Panel, PanelHeader, PanelHeaderBack, Group, List, Cell, Div, Button, Title} from '@vkontakte/vkui';
 import mascot from "../../img/bear.png";
 import '../css/logo.css'
 
@@ -13,7 +13,10 @@ const Create_courses_in = ({id, go_pred, go_create}) => (
 
 
         < Fragment>
+
             <Div className='User'>
+                <Title level="1" size='m' weight="bold"><h1>Coursel</h1></Title>
+
 
                 <img className="Persik" src={mascot} alt="Mascot"/>
 
