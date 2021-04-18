@@ -122,8 +122,22 @@ const App = () => {
         }
     }
 
-   const prev_view = function(currentRoute){
-        return id; 
+   const go_back = function(role){
+       let route;
+       console.log(route);
+       switch(role){
+           case 'leader': 
+           route = ROUTES.PRED;
+           break;
+           case 'student': 
+           route = ROUTES.STUD;
+           break;
+           case 'parent': 
+           route = ROUTES.ROD;
+           break;
+        }
+        setRole('');
+        setActivePanel(route);
    }
 
     const sendData = async function(url, data){
@@ -155,14 +169,14 @@ const App = () => {
                           role={role} o={setRole} f_r={false_role}/>
                     <Courses_stud id={ROUTES.COURSES} go_stud={go_stud}/>
                     <Progress_ id={ROUTES.PROG} go_stud={go_stud}/>
-                    <Stud user={fetchedUser} sendData={sendData} endpointAdd={ENDPOINT.addToCourse} id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_my_cours} getData={getData} endpointSearch={ENDPOINT.searchCourse}/>
+                    <Stud user={fetchedUser} sendData={sendData} go_back={go_back} endpointAdd={ENDPOINT.addToCourse} id={ROUTES.STUD} go_home={go_home} go_prog={go_prog} go_cours={go_my_cours} getData={getData} endpointSearch={ENDPOINT.searchCourse}/>
                     <Pred id={ROUTES.PRED} go_home={go_home} go_create_cour_in={go_create_cour_in}
                           go_my_cours={go_my_cours}/>
-                    <Rod id={ROUTES.ROD} go_home={go_home} go_rod_cours={go_rod_cours} modal_card={modal_card} setCard={setCard} ssilka={ssilka} s={setSsilka}/>
-                    <Create_courses_in id={ROUTES.CREATE_COUR_in} go_pred={go_pred} go_create={go_create}/>
-                    <CreateCourse role={role} id={ROUTES.CREATE_COUR} go_pred={go_pred} user={fetchedUser} sendData={sendData} endpoint={ENDPOINT.newCourse}/>
-                    <CourseView role={role} id={ROUTES.COURS_VIEW} endpoint={ENDPOINT.userCourseList} go_pred={go_pred} getData={getData} user={fetchedUser}/>
-                    <Rod_cours id={ROUTES.ROD_COURS} go_rod={go_rod}/>
+                    <Rod id={ROUTES.ROD} go_home={go_home}  go_rod_cours={go_rod_cours} modal_card={modal_card} setCard={setCard} ssilka={ssilka} s={setSsilka}/>
+                    <Create_courses_in go_back={go_back} id={ROUTES.CREATE_COUR_in}  go_create={go_create}/>
+                    <CreateCourse go_back={go_back} role={role} id={ROUTES.CREATE_COUR} go_pred={go_pred} user={fetchedUser} sendData={sendData} endpoint={ENDPOINT.newCourse}/>
+                    <CourseView go_back={go_back} role={role} id={ROUTES.COURS_VIEW} endpoint={ENDPOINT.userCourseList} go_pred={go_pred} getData={getData} user={fetchedUser}/>
+                    <Rod_cours go_back={go_back} id={ROUTES.ROD_COURS} go_rod={go_rod}/>
                 </View>
             </AppRoot>
         </AdaptivityProvider>
