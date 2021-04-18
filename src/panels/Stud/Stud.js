@@ -31,10 +31,8 @@ const Stud = (props) => {
     return(
         <Panel id={props.id}>
             <PanelHeader left={<PanelHeaderBack onClick={props.go_home}/>}>
-                Stud
-            </PanelHeader>
-
-            <h1>Ты ученик и тут будет твой функционал</h1>
+                Личный кабинет ученика
+            </PanelHeader>            
             <Search placeholder="найти новый курс" onChange={searchHandler} after={null}/>
             
             <Fragment>

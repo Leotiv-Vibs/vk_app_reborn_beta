@@ -31,7 +31,7 @@ class CreateCourse extends React.Component{
         return <Panel id={this.props.id}>
 
         <PanelHeader left={<PanelHeaderBack onClick={this.props.go_pred}/>}>
-            Pred
+            Создать курс
         </PanelHeader>
         <Div>
             <FormLayout onSubmit={this.onSubmit}>

@@ -39,12 +39,11 @@ class CourseView extends React.Component{
         return(
             <Panel id={this.props.id}>
                 <PanelHeader left={<PanelHeaderBack onClick={this.props.go_pred}/>}>
-                    Pred
+                    Мои курсы
                 </PanelHeader>
                 <Div>
-                    <h4>Тутачки твои курсы</h4>
                     <Group>
-                        <CardGrid size="m">
+                        <CardGrid size="l">
                             {this.courseData?
                                 this.courseData.map((course)=>{
                                 return <ContentCard
@@ -54,7 +53,7 @@ class CourseView extends React.Component{
                                         text={course.description}
                                         maxHeight={300}/>
                                     })
-                                    : <Div>Сейчас здесь появятся ваши курсы...</Div>
+                                    : <Div>Если ваши курсы еще не загрузились, скоро они появятся...</Div>
                                     
                             }
         

@@ -8,17 +8,13 @@ const Create_courses_in = ({id, go_pred, go_create}) => (
     <Panel id={id}>
 
         <PanelHeader left={<PanelHeaderBack onClick={go_pred}/>}>
-            Pred
+        Создай свой уникальный курс
         </PanelHeader>
 
 
         < Fragment>
             <Div className='User'>
-
                 <img className="Persik" src={mascot} alt="Mascot"/>
-
-                < h1> Создай свой уникальный курс</h1>
-
                 <h4>Здесь ты можешь создать свой курс и опубликовать его для всех</h4>
                 <Div>
                     <Button size='l' style={{fontsize: '70px'}} onClick={go_create}>

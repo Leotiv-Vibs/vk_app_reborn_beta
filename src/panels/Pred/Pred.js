@@ -6,9 +6,8 @@ const Pred = ({id, go_home, go_create_cour_in, go_my_cours}) => (
     <Panel id={id}>
 
         <PanelHeader left={<PanelHeaderBack onClick={go_home}/>}>
-            Pred
+           Личный кабинет преподавателя
         </PanelHeader>
-        <h1>Ты препод и тут будет твой функционал</h1>
         <Fragment>
             <Group>
                 <List>
